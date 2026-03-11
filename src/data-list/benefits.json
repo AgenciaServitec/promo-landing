@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Velocidad impresionante",
+    "description": "Tu sitio web cargará en milisegundos, brindando una experiencia fluida desde el primer clic.",
+    "icon": "⚡"
+  },
+  {
+    "title": "Diseño 100% adaptable",
+    "description": "Se ve y funciona perfecto en celulares, tablets, laptops o cualquier dispositivo.",
+    "icon": "📱"
+  },
+  {
+    "title": "Diseñado para convertir",
+    "description": "Estructura optimizada para generar más leads, ventas o reservas desde el primer día.",
+    "icon": "🧠"
+  },
+  {
+    "title": "Preparado para SEO y marketing",
+    "description": "Compatible con Google Ads, redes sociales y listo para destacar en los resultados de búsqueda.",
+    "icon": "🔍"
+  },
+  {
+    "title": "Seguridad de primer nivel",
+    "description": "Protegido contra ataques comunes, con HTTPS, backups y actualizaciones constantes.",
+    "icon": "🔒"
+  },
+  {
+    "title": "Soporte y escalabilidad",
+    "description": "Tu web crecerá contigo. Escalable, segura y con soporte cuando lo necesites.",
+    "icon": "🚀"
+  }
+]
