@@ -1,0 +1,91 @@
+---
+import { Icon } from 'astro-icon/components';
+import ContentWidth from "./ContentWidth.astro";
+---
+
+<section class="w-full bg-black py-16 text-white border-t border-white/5">
+    <ContentWidth>
+        <div class="max-w-xl mx-auto px-4">
+
+            <div class="flex items-center gap-3 mb-8">
+                <Icon name="mdi:comment-text-multiple" class="w-7 h-7 text-[#f9e400]" />
+                <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter">
+                    Comentarios destacados
+                </h2>
+            </div>
+
+            <div class="space-y-4 mb-16">
+
+                <div class="bg-neutral-900/40 border border-white/5 rounded-3xl p-5 flex gap-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-[#f9e400]">
+                        <img src="https://i.pravatar.cc/150?u=roberto" alt="Avatar" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <p class="font-black text-sm flex items-center gap-1">
+                                carla_tech_ok <Icon name="mdi:check-decagram" class="w-4 h-4 text-[#f9e400]" />
+                            </p>
+                            <div class="flex flex-col items-center opacity-40">
+                                <Icon name="mdi:heart-outline" class="w-4 h-4" />
+                                <span class="text-[10px] font-bold">2.4k</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-white/80 mt-1 leading-snug">
+                            La nitidez del 4K es de otro mundo. ¡Ver el fútbol aquí es otra experiencia! 🎥✨
+                        </p>
+                        <div class="flex gap-4 mt-3 text-[10px] font-bold opacity-30 uppercase tracking-widest">
+                            <span>Hace 2h</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900/40 border border-white/5 rounded-3xl p-5 flex gap-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-white/10">
+                        <img src="https://i.pravatar.cc/150?u=carla" alt="Avatar" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <p class="font-black text-sm">roberto.gaming</p>
+                            <div class="flex flex-col items-center opacity-40">
+                                <Icon name="mdi:heart-outline" class="w-4 h-4" />
+                                <span class="text-[10px] font-bold">856</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-white/80 mt-1 leading-snug">
+                            Input lag bajísimo para la PS5. El envío fue súper rápido, al día siguiente en casa. 🔥🎮
+                        </p>
+                        <div class="flex gap-4 mt-3 text-[10px] font-bold opacity-30 uppercase tracking-widest">
+                            <span>Hace 5h</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900/60 border-2 border-[#f9e400]/20 rounded-[2.5rem] p-8 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-[#f9e400]/10 blur-[80px] rounded-full"></div>
+
+                <h3 class="text-3xl md:text-4xl font-black uppercase italic tracking-tighter mb-6">
+                    ¡STOCK CRÍTICO!
+                </h3>
+
+                <div class="w-full h-4 bg-white/10 rounded-full mb-6 relative overflow-hidden border border-white/5 p-[2px]">
+                    <div class="h-full bg-gradient-to-r from-orange-600 to-[#f9e400] rounded-full animate-pulse shadow-[0_0_15px_rgba(249,228,0,0.4)]" style="width: 92%;"></div>
+                </div>
+
+                <div class="flex justify-between items-center mb-8 px-2">
+                    <span class="text-[11px] font-black uppercase opacity-40">Vendido: 92%</span>
+                    <div class="bg-[#f9e400] text-black px-3 py-1 rounded-lg font-black text-[11px] uppercase tracking-tighter animate-bounce">
+                        Quedan 8 unidades
+                    </div>
+                </div>
+
+                <p class="text-sm font-bold italic text-white/60 leading-tight">
+                    "Más de 200 personas tienen este producto en su carrito ahora mismo."
+                </p>
+            </div>
+
+        </div>
+    </ContentWidth>
+</section>

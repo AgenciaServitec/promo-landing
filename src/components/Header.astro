@@ -1,32 +1,74 @@
----
-import {Image} from "astro:assets"
 
-import ContentWidth from "./ContentWidth.astro";
 ---
-<header id="header" class="w-full fixed top-0 left-0 z-50 pt-4 pb-2">
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components";
+import ContentWidth from "./ContentWidth.astro";
+import logo from "../assets/logo-servitec.png";
+
+const whatsappNumber = "51941801827";
+const message = encodeURIComponent("¡Hola Servitec! Estoy interesado en el Proyector Epson Home Cinema de la oferta. ¿Me podrían dar más información?");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+---
+
+<header id="header" class="w-full fixed top-0 left-0 z-[100] py-4 transition-all duration-500 bg-black/40 backdrop-blur-xl border-b border-white/10">
+
+  <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#f9e400]/30 to-transparent"></div>
+
   <ContentWidth>
-    <div class="flex flex-col md:flex-row md:justify-between items-center gap-4">
-      <Image src="/logo.png" alt="Logo de Servitec Publicidad Digital." width="140" height="110" loading="eager" />
-      <nav class="rounded-full">
-        <ul class="flex justify-center gap-6 px-6 py-2 lg:px-10 lg:py-4">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/#benefits">Beneficios</a></li>
-          <li><a href="/#jobs">Trabajos</a></li>
-        </ul>
-      </nav>
-      <a href="/#contact" class="hidden md:flex px-4 py-2 lg:px-8 lg:py-4 rounded-full bg-black backdrop-blur-md shadow text-white">Contacto</a>
+    <div class="flex justify-between items-center w-full">
+
+      <a href="/" class="transition-transform active:scale-95">
+        <Image
+            src={logo}
+            alt="Logo de Servitec"
+            width="400"
+            height="86"
+            class="w-auto h-8"
+            loading="eager"
+        />
+      </a>
+
+      <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative flex items-center justify-center w-11 h-11 rounded-xl border border-[#f9e400]/40 bg-[#f9e400]/10 transition-all duration-300 active:scale-90"
+      >
+        <Icon
+            name="mdi:cart"
+            class="w-5 h-5 text-[#f9e400]"
+        />
+
+        <span class="absolute -top-1.5 -right-1.5 flex h-5 w-5">
+          <span class="relative flex items-center justify-center rounded-full h-5 w-5 bg-[#f9e400] text-[11px] font-black text-black shadow-sm border-2 border-black">
+            1
+          </span>
+        </span>
+      </a>
+
     </div>
   </ContentWidth>
+
+  <div id="header-line" class="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#f9e400] transition-all duration-500 shadow-[0_0_15px_rgba(249,228,0,0.6)]"></div>
 </header>
 
 <script>
-  const header = document.querySelector('#header') as HTMLElement;
+  const header = document.querySelector('#header');
+  const headerLine = document.querySelector('#header-line') as HTMLElement;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 110) {
-      header.classList.add('shadow', "backdrop-blur-sm");
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+    if (window.scrollY > 10) {
+      header?.classList.add('bg-black/95', 'py-2.5', 'border-white/20');
+      header?.classList.remove('bg-black/40', 'py-4', 'border-white/10');
     } else {
-      header.classList.remove('shadow');
+      header?.classList.add('bg-black/40', 'py-4', 'border-white/10');
+      header?.classList.remove('bg-black/95', 'py-2.5', 'border-white/20');
+    }
+
+    if(headerLine) {
+      headerLine.style.width = `${scrollPercent}%`;
     }
   });
 </script>

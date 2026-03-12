@@ -1,29 +1,182 @@
 ---
+import { Icon } from 'astro-icon/components';
 import ContentWidth from "./ContentWidth.astro";
+
+import videoOferta from "../assets/Download.mp4";
+import posterVideo from "../assets/poster-video.jpg";
+
+const whatsappNumber = "51941801827";
+const message = encodeURIComponent("¡Hola Servitec! Vi el video de la Oferta Flash y quiero comprar el Proyector Epson ahora mismo. ⚡️");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 ---
-<!--bg-gradient-to-b from-yellow-200 via-yellow-100 to-white-->
-<section class="w-full h-svh relative">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-yellow-200 via-yellow-100 to-white">
-    <div class="relative h-full w-full bg-red [&>div]:absolute [&>div]:h-full [&>div]:w-full [&>div]:bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [&>div]:[background-size:16px_16px] [&>div]:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-      <div></div>
-    </div>
+
+<section class="w-full relative pt-20 bg-black text-white overflow-hidden min-h-screen">
+
+  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#f9e400] blur-[120px] rounded-full animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#f9e400] blur-[120px] rounded-full animate-pulse delay-700"></div>
   </div>
 
-  <ContentWidth>
-    <div class="relative w-full h-svh flex flex-col gap-8 xl:gap-10 justify-center items-center pt xl:pt-32">
-      <div class="flex xl:hidden gap-4">
-        <p class="w-10 h-10 flex justify-center items-center bg-white shadow rounded-full p-6 text-2xl">👨🏽‍💻</p>
-        <p class="w-10 h-10 flex justify-center items-center bg-white shadow rounded-full p-6 text-2xl">📱</p>
-        <p class="w-10 h-10 flex justify-center items-center bg-white shadow rounded-full p-6 text-2xl">📈</p>
-        <p class="w-10 h-10 flex justify-center items-center bg-white shadow rounded-full p-6 text-2xl">🚀</p>
+  <div class="w-full bg-[#f9e400] text-black py-6 shadow-2xl relative z-10 border-b-4 border-black/10">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <ContentWidth>
+      <div class="flex flex-col items-center justify-center text-center relative z-20">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-none uppercase italic drop-shadow-sm">
+          ¡OFERTA FLASH!
+        </h1>
+        <div class="flex items-center gap-2 mt-2 bg-black text-[#f9e400] px-4 py-1.5 rounded-full font-black text-[12px] italic tracking-widest animate-bounce">
+          TIEMPO AGOTÁNDOSE
+        </div>
       </div>
-      <p class="hidden xl:flex absolute top-48 left-10 text-8xl">👨🏽‍💻</p>
-      <p class="hidden xl:flex absolute bottom-48 left-32 text-8xl">📱</p>
-      <p class="hidden xl:flex absolute top-48 right-10 text-8xl">📈</p>
-      <p class="hidden xl:flex absolute bottom-48 right-32 text-8xl">🚀</p>
-      <h2 class="text-4xl md:text-6xl lg:text-7xl xl:text-9xl text-center font-poppins font-bold">Soluciones web profesionales para tu negocio</h2>
-      <p class="text-sm xl:text-2xl text-center text-gray-500">Sitios web modernos y rápidos que convierten desde el primer clic.</p>
-      <a href="/#contact" class="xl:text-xl text-white px-4 py-2 lg:px-8 lg:py-4 xl:px-14 xl:py-6 border rounded-full bg-gradient-to-b from-neutral-900 via-gray-800 to-gray-700">Solicita tu cotización gratuita 👇</a>
-    </div>
-  </ContentWidth>
+    </ContentWidth>
+  </div>
+
+  <div class="w-full bg-black pb-20 pt-10 relative z-10">
+    <ContentWidth>
+      <div class="relative max-w-[360px] mx-auto group">
+
+        <div class="absolute -inset-1 bg-gradient-to-tr from-[#f9e400] via-transparent to-[#f9e400] rounded-[3.5rem] blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+
+        <div class="relative p-[8px] bg-neutral-900 rounded-[3.2rem] shadow-[0_40px_100px_-15px_rgba(0,0,0,1)] border border-white/5">
+
+          <div id="video-container" class="relative aspect-[9/16] overflow-hidden rounded-[2.8rem] bg-gray-900 border border-black cursor-none select-none">
+
+            <div class="absolute top-4 inset-x-6 z-40 flex gap-1.5 h-1">
+              <div class="flex-1 bg-white/30 rounded-full overflow-hidden">
+                <div id="progress-bar" class="h-full bg-[#f9e400] w-0 transition-all duration-100 ease-linear"></div>
+              </div>
+            </div>
+
+            <video
+                id="main-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster={posterVideo.src}
+                class="w-full h-full object-cover relative z-0"
+            >
+              <source src={videoOferta} type="video/mp4" />
+            </video>
+
+            <div id="double-tap-heart" class="absolute inset-0 flex items-center justify-center z-50 pointer-events-none opacity-0 scale-50 transition-all duration-300">
+              <Icon name="mdi:heart" class="w-32 h-32 text-red-500 drop-shadow-2xl" />
+            </div>
+
+            <div id="play-overlay" class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity z-20">
+              <Icon name="mdi:play" class="w-24 h-24 text-[#f9e400]" />
+            </div>
+
+            <div class="absolute bottom-12 right-4 z-30 flex flex-col gap-8">
+
+              <div class="flex flex-col items-center group/btn">
+                <button id="like-btn" class="p-3.5 rounded-full bg-black/40 backdrop-blur-2xl border border-white/20 shadow-2xl transition-all active:scale-150">
+                  <Icon name="mdi:heart" class="w-7 h-7 text-white transition-colors duration-300" id="heart-icon" />
+                </button>
+                <span id="like-count" class="text-[11px] font-black mt-2 drop-shadow-lg text-white/90">2.4k</span>
+              </div>
+
+              <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-16 h-16 rounded-full bg-[#f9e400] flex items-center justify-center text-black shadow-[0_0_30px_rgba(249,228,0,0.5)] animate-pulse hover:scale-110 transition-transform"
+              >
+                <Icon name="mdi:whatsapp" class="w-9 h-9 font-bold" />
+              </a>
+            </div>
+
+            <div class="absolute bottom-10 left-6 z-30 max-w-[60%]">
+              <p class="text-[14px] font-black italic text-[#f9e400] tracking-wide drop-shadow-md">@ServitecDigital</p>
+              <p class="text-[12px] font-medium text-white/80 line-clamp-2 mt-1 drop-shadow-md">Consigue este pack exclusivo con 50% de descuento solo hoy. ⚡️</p>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none z-10"></div>
+          </div>
+        </div>
+      </div>
+    </ContentWidth>
+  </div>
 </section>
+
+<style>
+  @keyframes float-up-fancy {
+    0% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+    100% { transform: translateY(-200px) scale(2) rotate(45deg); opacity: 0; }
+  }
+  .animate-heart {
+    animation: float-up-fancy 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+</style>
+
+<script>
+  const video = document.querySelector('#main-video') as HTMLVideoElement;
+  const container = document.querySelector('#video-container');
+  const progressBar = document.querySelector('#progress-bar') as HTMLElement;
+  const doubleTapHeart = document.querySelector('#double-tap-heart');
+  const likeBtn = document.querySelector('#like-btn');
+  const heartIcon = document.querySelector('#heart-icon');
+  const likeCount = document.querySelector('#like-count');
+
+  video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100;
+    if(progressBar) progressBar.style.width = `${percentage}%`;
+  });
+
+  let lastTap = 0;
+  container?.addEventListener('touchstart', (e) => {
+    const now = Date.now();
+    if (now - lastTap < 300) {
+      handleLike(true);
+      showDoubleTapHeart();
+    }
+    lastTap = now;
+  });
+
+  function showDoubleTapHeart() {
+    doubleTapHeart?.classList.add('opacity-100', 'scale-100');
+    setTimeout(() => {
+      doubleTapHeart?.classList.remove('opacity-100', 'scale-100');
+    }, 700);
+  }
+
+  let liked = false;
+  function handleLike(forceTrue = false) {
+    if(forceTrue) liked = true;
+    else liked = !liked;
+
+    if (liked) {
+      heartIcon?.classList.add('text-red-500');
+      heartIcon?.classList.remove('text-white');
+      if (likeCount) likeCount.textContent = '2.5k';
+      spawnHeart();
+    } else {
+      heartIcon?.classList.remove('text-red-500');
+      heartIcon?.classList.add('text-white');
+      if (likeCount) likeCount.textContent = '2.4k';
+    }
+  }
+
+  function spawnHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '🔥';
+    heart.className = 'absolute bottom-32 right-12 text-3xl z-50 animate-heart pointer-events-none';
+    container?.appendChild(heart);
+    setTimeout(() => heart.remove(), 1000);
+  }
+
+  likeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    handleLike();
+  });
+
+  container?.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      document.querySelector('#play-overlay')?.classList.add('opacity-0');
+    } else {
+      video.pause();
+      document.querySelector('#play-overlay')?.classList.remove('opacity-0');
+    }
+  });
+</script>

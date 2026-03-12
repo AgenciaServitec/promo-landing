@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon/components';
+import ContentWidth from "./ContentWidth.astro";
+---
+
+<section class="w-full bg-black py-16 text-white">
+    <ContentWidth>
+        <div class="max-w-2xl mx-auto px-4">
+
+            <div class="bg-neutral-900/50 border border-white/5 rounded-[2.5rem] p-4 md:p-12 mb-8 shadow-2xl">
+
+                <div class="flex items-center gap-4 mb-10">
+                    <Icon name="mdi:package-variant-closed" class="w-8 h-8 text-[#f9e400]" />
+                    <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter">
+                        Qué incluye tu paquete
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 xs:grid-cols-2 gap-6">
+
+                    <div class="bg-black/40 p-5 rounded-2xl border border-white/5">
+                        <Icon name="mdi:projector" class="w-8 h-8 text-[#f9e400] mb-3" />
+                        <h3 class="font-bold text-lg leading-tight mb-1">Proyector Epson</h3>
+                        <p class="text-xs text-white/40 leading-relaxed uppercase font-medium">Home Cinema con tecnología 3LCD.</p>
+                    </div>
+
+                    <div class="bg-black/40 p-5 rounded-2xl border border-white/5">
+                        <Icon name="mdi:remote" class="w-8 h-8 text-[#f9e400] mb-3" />
+                        <h3 class="font-bold text-lg leading-tight mb-1">Control remoto</h3>
+                        <p class="text-xs text-white/40 leading-relaxed uppercase font-medium">Pilas incluidas para uso inmediato.</p>
+                    </div>
+
+                    <div class="bg-black/40 p-5 rounded-2xl border border-white/5">
+                        <Icon name="mdi:power-plug" class="w-8 h-8 text-[#f9e400] mb-3" />
+                        <h3 class="font-bold text-lg leading-tight mb-1">Cable alimentación</h3>
+                        <p class="text-xs text-white/40 leading-relaxed uppercase font-medium">Longitud de 3 metros reforzado.</p>
+                    </div>
+
+                    <div class="bg-black/40 p-5 rounded-2xl border border-white/5">
+                        <Icon name="mdi:book-open-page-variant" class="w-8 h-8 text-[#f9e400] mb-3" />
+                        <h3 class="font-bold text-lg leading-tight mb-1">Guía de inicio</h3>
+                        <p class="text-xs text-white/40 leading-relaxed uppercase font-medium">Configuración rápida en 5 minutos.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 border-t border-white/10">
+
+                <div class="flex flex-col items-center text-center p-6 border-r border-white/10">
+                    <Icon name="mdi:truck-fast" class="w-8 h-8 text-[#f9e400] mb-3" />
+                    <h4 class="text-[11px] font-black uppercase tracking-widest leading-tight">Envío Express Gratis</h4>
+                    <p class="text-[10px] text-white/40 mt-1 uppercase font-bold italic">Recibe en 24/48 horas</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-6">
+                    <Icon name="mdi:shield-check" class="w-8 h-8 text-[#f9e400] mb-3" />
+                    <h4 class="text-[11px] font-black uppercase tracking-widest leading-tight">Pago 100% Seguro</h4>
+                    <p class="text-[10px] text-white/40 mt-1 uppercase font-bold italic">Garantía de devolución</p>
+                </div>
+
+            </div>
+
+        </div>
+    </ContentWidth>
+</section>

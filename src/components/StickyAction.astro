@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const whatsappNumber = "51941801827";
+const message = encodeURIComponent("¡Hola! Quiero aprovechar la Oferta Flash del Proyector Epson por S/ 3,299. ¿Cómo realizo el pago?");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+---
+
+<div class="fixed bottom-0 left-0 w-full z-[90] px-4 pb-6 pointer-events-none">
+    <div
+            class="max-w-md mx-auto w-full bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-4 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] flex items-center justify-between pointer-events-auto translate-y-[150%] transition-transform duration-500"
+            id="sticky-bar"
+    >
+
+        <div class="flex flex-col">
+            <span class="text-[10px] font-black uppercase tracking-widest text-white/40 leading-none mb-1">Total:</span>
+            <div class="flex items-baseline gap-2">
+                <span class="text-xl font-black text-white italic">S/ 3,299</span>
+                <span class="text-[12px] font-bold text-white/20 line-through decoration-red-600/40 italic">S/ 5,499</span>
+            </div>
+        </div>
+
+        <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 bg-[#f9e400] text-black px-6 py-4 rounded-2xl shadow-[0_0_20px_rgba(249,228,0,0.3)] hover:scale-105 active:scale-95 transition-all"
+        >
+            <span class="font-black uppercase italic text-sm tracking-tighter">Comprar ahora</span>
+            <Icon name="mdi:whatsapp" class="w-5 h-5" />
+        </a>
+    </div>
+</div>
+
+<script>
+    const stickyBar = document.querySelector('#sticky-bar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= 0) {
+            stickyBar?.classList.remove('translate-y-[150%]');
+            stickyBar?.classList.add('translate-y-0');
+        } else {
+            stickyBar?.classList.add('translate-y-[150%]');
+            stickyBar?.classList.remove('translate-y-0');
+        }
+    });
+</script>
