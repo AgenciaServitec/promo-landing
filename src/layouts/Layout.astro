@@ -5,27 +5,31 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <title>Servitec Publicidad Digital</title>
-  </head>
-  <body class="relative ">
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+
+  <title>OFERTA FLASH - SERVITEC</title>
+</head>
+<body class="bg-black text-white antialiased selection:bg-[#f9e400] selection:text-black">
+<Header />
+<main class="min-h-screen">
+  <slot />
+</main>
+<Footer />
+</body>
 </html>
 
-<style>
-  html,
-  body {
-    background: black;
+<style is:global>
+  html, body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
+    overflow-x: hidden;
   }
 </style>
